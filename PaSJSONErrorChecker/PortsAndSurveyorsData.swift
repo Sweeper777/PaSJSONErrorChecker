@@ -20,3 +20,11 @@ struct Surveyor: Codable {
     let name: String
     let contacts, prices: [String]
 }
+
+extension Surveyor {
+    func isIdentical(to other: Surveyor) -> Bool {
+        return self.name == other.name &&
+            self.contacts == other.contacts &&
+            self.prices == other.prices
+    }
+}
