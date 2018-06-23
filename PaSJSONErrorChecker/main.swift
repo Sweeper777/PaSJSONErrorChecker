@@ -47,3 +47,13 @@ for port in portsAndSurveyorsData.ports {
     }
 }
 
+// identical surveyors
+for i in 0..<portsAndSurveyorsData.surveyors.count {
+    for j in 0..<portsAndSurveyorsData.surveyors.count where j != i {
+        if portsAndSurveyorsData.surveyors[i].isIdentical(to: portsAndSurveyorsData.surveyors[j]) {
+            print("Surveyor ID \(portsAndSurveyorsData.surveyors[i].id) is identical to surveyor ID \(portsAndSurveyorsData.surveyors[j].id)")
+        }
+    }
+}
+
+print("Check complete")
