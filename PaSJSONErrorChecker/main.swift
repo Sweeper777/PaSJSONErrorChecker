@@ -31,3 +31,11 @@ for port in portsAndSurveyorsData.ports {
     }
 }
 
+// ports have existent surveyors
+for port in portsAndSurveyorsData.ports {
+    for surveyorId in port.surveyors {
+        if !surveyorIds.contains(surveyorId) {
+            print("Port \"\(port.name)\" has a non-existent surveyor: \(surveyorId)!")
+        }
+    }
+}
