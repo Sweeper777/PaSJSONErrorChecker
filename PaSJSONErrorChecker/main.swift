@@ -6,3 +6,12 @@ guard let portsAndSurveyorsData = try? JSONDecoder().decode(PortsAndSurveyorsDat
     exit(0)
 }
 
+// duplicate ids
+let surveyorIds = portsAndSurveyorsData.surveyors.map { $0.id }
+var idSet = Set<Int>()
+for id in surveyorIds {
+    if !idSet.insert(id).inserted {
+        print("Surveyor ID \(id) appears more than once!")
+    }
+}
+
