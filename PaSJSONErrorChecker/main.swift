@@ -39,3 +39,11 @@ for port in portsAndSurveyorsData.ports {
         }
     }
 }
+
+// ports have duplicate surveyors
+for port in portsAndSurveyorsData.ports {
+    if Set(port.surveyors).count != port.surveyors.count {
+        print("Port \"\(port.name)\" has duplicate surveyors!")
+    }
+}
+
