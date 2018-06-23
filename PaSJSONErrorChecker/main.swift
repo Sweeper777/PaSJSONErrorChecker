@@ -24,3 +24,10 @@ for name in portNames {
     }
 }
 
+// ports have surveyors
+for port in portsAndSurveyorsData.ports {
+    if port.surveyors.isEmpty {
+        print("Port \"\(port.name)\" has no surveyors!")
+    }
+}
+
