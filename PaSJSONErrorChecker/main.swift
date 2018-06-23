@@ -15,3 +15,12 @@ for id in surveyorIds {
     }
 }
 
+// ports no duplicate
+let portNames = portsAndSurveyorsData.ports.map { $0.name }
+var nameSet = Set<String>()
+for name in portNames {
+    if !nameSet.insert(name).inserted {
+        print("Port name \"\(name)\" appears more than once!")
+    }
+}
+
