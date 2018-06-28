@@ -56,4 +56,14 @@ for i in 0..<portsAndSurveyorsData.surveyors.count {
     }
 }
 
+// surveyors without price or contacts
+for surveyor in portsAndSurveyorsData.surveyors {
+    if surveyor.contacts.filter({ $0.trimmingCharacters(in: CharacterSet.whitespaces) != ""}).count == 0 {
+        print("Surveyor ID \(surveyor.id) has no contact info!")
+    }
+    if surveyor.prices.filter({ $0.trimmingCharacters(in: CharacterSet.whitespaces) != ""}).count == 0 {
+        print("Surveyor ID \(surveyor.id) has no price info!")
+    }
+}
+
 print("Check complete")
